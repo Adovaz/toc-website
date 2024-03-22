@@ -1,6 +1,6 @@
 <br>
 <div align="center">
-<a href="#todo" target="_blank" rel="noreferrer noopener"><img width="130" alt="toc logo" src="./public/tocIcon.webp"></a>
+<a href="#todo" target="_blank" rel="noreferrer noopener"><img width="130" alt="toc logo" src="./public/tocIconRound.webp"></a>
 
 ### ToC Website
 
