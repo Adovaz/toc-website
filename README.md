@@ -10,7 +10,7 @@ The website for Trans on Campus at the University of Auckland
 
 ## Contents
 
-- Contributing
+- [Contributing](#contributing)
   - [Development](#development)
   - [Writing](#writing)
 - [Setup](#setup)
@@ -19,11 +19,11 @@ The website for Trans on Campus at the University of Auckland
 - [Project Structure](#project-structure)
 - [Contact](#contact)
 
-## Development
+## Contributing
 
 Please feel free to contribute to the upkeep and development of the website by making Pull Requests or raising Issues.
 
-## General development information
+## Development
 
 We use [Astro](https://astro.build) to build the website. The website is hosted on [Cloudflare Pages](https://pages.cloudflare.com). The site uses basic HTML, CSS, and JavaScript.
 
