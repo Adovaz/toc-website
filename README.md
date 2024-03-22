@@ -1,42 +1,98 @@
-# Astro Starter Kit: Basics
+<br>
+<div align="center">
+<a href="#todo" target="_blank" rel="noreferrer noopener"><img width="130" alt="toc logo" src="./public/tocIcon.webp"></a>
 
-```sh
-npm create astro@latest -- --template basics
+### ToC Website
+
+The website for Trans on Campus at the University of Auckland
+
+</div>
+
+## Contents
+
+- Contributing
+  - [Development](#development)
+  - [Writing](#writing)
+- [Setup](#setup)
+  - [Development](#development-server)
+  - [Production deployment](#production-deployment)
+- [Project Structure](#project-structure)
+- [Contact](#contact)
+
+## Development
+
+Please feel free to contribute to the upkeep and development of the website by making Pull Requests or raising Issues.
+
+### General development information
+
+We use [Astro](https://astro.build) to build the website. The website is hosted on [Cloudflare Pages](https://pages.cloudflare.com). The site uses basic HTML, CSS, and JavaScript.
+
+Astro provides our templating, meaning we can create and reuse components across the site without duplicating code.
+
+To add a new page, create a new `.astro` file in the `src/pages` directory. To add a new component, create a new `.astro` file in the `src/components` directory. Most pages use the `defaultLayout.astro` component to maintain a consistent look and feel.
+
+### Writing
+
+> [!CAUTION]
+> TODO
+
+The website uses Markdown for content pages. To add a new page, create a new `.md` file in the `src/content` directory, using the `temnplate.md` file as a guide.
+
+You do not need to know how to program to write content, simply use basic Markdown syntax to format your text.
+
+## Setup
+
+> [!TIP]
+> It is recommended you work in VSCode with the Astro extension installed.
+
+[Install Node.js](https://nodejs.org/en) version 19 or higher, then run the following command in your terminal:
+
+```bash
+$ npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Development Server
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+To start the development server on `http://localhost:4321`, run:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+```bash
+$ npm run dev
+```
 
-## 🚀 Project Structure
+## Production Deployment
 
-Inside of your Astro project, you'll see the following folders and files:
+The website is deployed to [Cloudflare Pages](https://pages.cloudflare.com) on push to the `main` branch. Pages uses the `npm run build` command to build the site.
+
+## Project Structure
+
+The project is structured as follows:
 
 ```text
 /
 ├── public/
-│   └── favicon.svg
+│   └── siteImage.jpg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── siteComponent.astro
 │   ├── layouts/
-│   │   └── Layout.astro
+│   │   └── pageLayout.astro
 │   └── pages/
-│       └── index.astro
+│       └── page.astro
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- `public/` contains static files like images and favicons.
+- `src/` contains all the source code for the website.
+  - `components/` contains reusable components.
+  - `layouts/` contains layout components.
+  - `pages/` contains the pages of the website.
+- `package.json` contains the project's dependencies and scripts.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Contact
 
-Any static assets, like images, can be placed in the `public/` directory.
+If you have any questions or need help, please contact [toc@ramiels.me](mailto:toc@ramiels.me)
 
-## 🧞 Commands
+## 🧞 Astro Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -48,7 +104,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
