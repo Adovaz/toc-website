@@ -23,7 +23,7 @@ The website for Trans on Campus at the University of Auckland
 
 Please feel free to contribute to the upkeep and development of the website by making Pull Requests or raising Issues.
 
-### General development information
+## General development information
 
 We use [Astro](https://astro.build) to build the website. The website is hosted on [Cloudflare Pages](https://pages.cloudflare.com). The site uses basic HTML, CSS, and JavaScript.
 
@@ -31,7 +31,7 @@ Astro provides our templating, meaning we can create and reuse components across
 
 To add a new page, create a new `.astro` file in the `src/pages` directory. To add a new component, create a new `.astro` file in the `src/components` directory. Most pages use the `defaultLayout.astro` component to maintain a consistent look and feel.
 
-### Writing
+## Writing
 
 > [!CAUTION]
 > TODO
