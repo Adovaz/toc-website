@@ -1,0 +1,144 @@
+---
+import Socials from '../components/Socials.astro';
+import LinkCard from '../components/LinkCard.astro';
+import Layout from '../layouts/linktreeLayout.astro';
+import { Image } from 'astro:assets';
+---
+
+<Layout title="Trans on Campus • Links">
+    <main>
+        <div class="content">
+            <div class="header">
+                <a href="../">
+                    <img src="../tocIcon.webp" alt="Trans on Campus" class="tocIcon" width="110" height="110"/>
+                    <div class="name">
+                        Trans on Campus
+                    </div>
+                </a>
+                <div class="subtitle">
+                    Support, socials, advocacy for trans, gender diverse, and questioning students in Auckland
+                </div>
+            </div>
+
+            <ul role="list" class="link-card-grid">
+                <LinkCard
+                    href="https://youtube.com/clip/UgkxkaBIKdU3x_fZ7kchycBvSbQArzjly-mH?si=lvbdfPa2IwML0gHu"
+                    title="QSpace Location"
+                    subtitle=""
+                    image="../location.webp"
+                    style=""
+                />
+                <LinkCard
+                    href="https://youtube.com/clip/UgkxkaBIKdU3x_fZ7kchycBvSbQArzjly-mH?si=lvbdfPa2IwML0gHu"
+                    title="PLEASE SIGN UP HERE!"
+                    subtitle="You don't have to be a UoA student :)"
+                    image="../tocIcon.webp"
+                    style="attention"
+                />
+
+                <div class="link-card-horizontal">
+                    <LinkCard
+                        href="https://discord.gg/wHNrGSpfwd"
+                        title="Discord"
+                        subtitle=""
+                        image="../tocIcon.webp"
+                        style="mini"
+                    />
+                    <LinkCard
+                        href="https://www.instagram.com/toc_uoa/"
+                        title="Instagram"
+                        subtitle=""
+                        image="../jermaIcon.webp"
+                        style="mini"
+                    />
+                    <LinkCard
+                        href="https://www.facebook.com/profile.php?id=100085172237348"
+                        title="Facebook"
+                        subtitle=""
+                        image="../tocIcon.webp"
+                        style="mini"
+                    />
+                </div>
+
+                <LinkCard
+                    href="https://forms.gle/QknRp4Snjd3sSJjj7"
+                    title="ToC Movie Night :3"
+                    subtitle=""
+                    image="../movieNight.webp"
+                    style=""
+                />
+                <LinkCard
+                    href="https://www.auckland.ac.nz/en/students/student-support/personal-support/rainbow-students/unisex-toilets-on-campus.html"
+                    title="UoA Gender Neutral Bathrooms"
+                    subtitle=""
+                    image="../yipe.webp"
+                    style=""
+                />
+
+                <Socials />
+            </ul>
+        </div>
+    </main>
+</Layout>
+<style>
+    html {
+        background: linear-gradient(rgb(164, 59, 201), rgb(130, 101, 243));
+        min-height: 100dvh;
+        overflow: hidden;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .header {
+        color: white;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .tocIcon {
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    .name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 1rem 0;
+        padding: 0;
+        margin: 10px 0 0 0;
+    }
+    .header a {
+        color: white;
+        text-decoration: none;
+    }
+    .subtitle {
+        font-size: 1.05rem;
+        opacity: 0.9;
+        font-weight: 600;
+        margin: 1rem 0;
+        padding: 0;
+        margin: 10px 0 0 0;
+    }
+    .content {
+        max-width: 700px;
+        position: relative;
+        width: 100%;
+    }
+    .link-card-grid {
+		display: flex;
+		/* grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr)); */
+        flex-direction: column;
+		gap: 1.2rem;
+		padding: 0;
+        width: 100%;
+        /* overflow: auto; */
+	}
+    .link-card-horizontal {
+        display: flex;
+        /* evenly space until edges */
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+</style>
