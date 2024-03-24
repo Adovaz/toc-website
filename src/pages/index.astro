@@ -4,6 +4,84 @@ import Layout from '../layouts/defaultLayout.astro';
 
 <Layout title="Trans on Campus">
     <main>
-        welcome to TOC
+        <!-- 
+            [x] Splash (welcome to TOC, Join/About btns)
+            [] About (what is TOC, what we do, who we are)
+            [] Resources cards (2-3 cards, more resources btn)
+            [] Events (upcoming events, past events)
+            [] Sponsors
+         -->
+        <div class="splash">
+            <div class="splashContent">
+                <div class="splashText">
+                    <div class="splashTitle"> Trans on Campus </div>
+                    <div class="splashSubtitle">
+                        ToC is a support network, social group, and advocacy group
+                        for Gender Deverse & Questioning students in Auckland. Welcome &lt;3
+                    </div>
+                </div>
+                <div class="splashButtons">
+                    <div class="splashBtn joinBtn">Join ToC</div>
+                    <div class="splashBtn aboutBtn">About Us</div>
+                </div>
+            </div>
+        </div>
     </main>
 </Layout>
+<style>
+    .splashContent {
+        /* background: red; */
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .splashButtons {
+        display: flex;
+        padding: 0 7rem 0 7rem;
+        margin-top: 4rem;
+    }
+    .splashBtn {
+        padding: 1rem 2rem;
+        margin-right: 3rem;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        background-color: white;
+        color: #633dbd;
+        cursor: pointer;
+    }
+    .splashTitle {
+        font-size: 5rem;
+        font-weight: 700;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+    }
+    .splashSubtitle {
+        font-size: 1.7rem;
+        font-weight: 400;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        width: 70%;
+        margin-top: 1rem;
+    }
+    .splashText {
+        color: white;
+        padding: 0 7rem 0 7rem;
+    }
+    .splash {
+        /* background: rgb(249,222,226);
+        background: radial-gradient(circle, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 50%, rgba(86,203,251,1) 100%);         background-position: center; */
+        /* background: rgb(249,222,226);
+        background: linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%);  */
+        background: rgb(116,76,213);
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 60%, rgba(134,117,241,1) 100%);
+        height: calc(100vh - 17rem);
+        width: 100%;
+    }
+    .main {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+</style>

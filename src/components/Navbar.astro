@@ -1,1 +1,97 @@
-<h1>woo</h1>
+---
+
+---
+<div class="navbar">
+    <!-- navbar:
+        - home
+        - resources
+        - about
+        - events
+        - sponsors
+        - join (button)
+    -->
+
+    <div class="navbarLeft">
+        <a href="/" class="navbarLogo">
+            <img src="./tocTempLogo.png" alt="Trans on Campus">
+        </a>
+
+        <ul class="navbarList">
+            <!-- <li><a href="/">Home</a></li> -->
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/sponsors/">Sponsors</a></li>
+            <!-- <li id="navButton"><a href="/join/">Join</a></li> -->
+        </ul>
+    </div>
+
+    <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" class="navbarButton" target="_blank" rel="noopener noreferrer">
+        Join ToC
+    </a>
+
+</div>
+<style>
+    .navbarButton {
+        background-color: #734ad3;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        padding: 14px 20px;
+        border-radius: 5px;
+        float: right;
+    }
+    .navbarButton:hover {
+        background-color: #6840c4;
+    }
+    .navbarLeft {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .navbar {
+        background: white;
+        height: 90px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1.3em;
+        padding: 0 30px;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+    }
+    .nabarList {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        float: right;
+    }
+    .navbarList li {
+        float: left;
+        display: inline;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    .navbarList li a {
+        text-decoration: none;
+        color: rgb(18, 12, 31);
+    }
+    .navbarList li a:hover {
+        color: rgb(3, 0, 10);
+        /* underline */
+        text-decoration: underline;
+    }
+    .navbarLogo img {
+        height: 70px;
+        /* margin-top: 10px; */
+    }
+
+</style>
