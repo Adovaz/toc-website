@@ -6,8 +6,8 @@ import Layout from '../layouts/defaultLayout.astro';
     <main>
         <!-- 
             [x] Splash (welcome to TOC, Join/About btns)
-            [] About (what is TOC, what we do, who we are)
-            [] Resources cards (2-3 cards, more resources btn)
+            [x] About (what is TOC, what we do, who we are)
+            [x] Resources cards (2-3 cards, more resources btn)
             [] Events (upcoming events, past events)
             [] Sponsors
          -->
@@ -26,11 +26,57 @@ import Layout from '../layouts/defaultLayout.astro';
                 </div>
             </div>
         </div>
+        <div class="about section">
+            <h1>About Us</h1>
+            <p>
+                ToC is when the scriggly wiggly and the wiggly scriggly come together to form a beautiful union of scriggly wiggly wiggly scriggly.
+                When I was a young scrungle, I always wanted to be a scriggly wiggly, but my parents told me that I was a wiggly scriggly. I was so sad.
+                But then I found ToC and I was able to be a scriggly wiggly wiggly scriggly. I was so happy. I love ToC. ToC is my life. ToC is my love. ToC is my everything.
+            </p>
+            <div class="splashBtn findMore">Learn More</div>
+        </div>
+        <div class="resources section grey">
+            <h1>Resources</h1>
+            <p>some resource cards here :3 and one that links to resources page!!</p>
+        </div>
+        <div class="events section">
+            <h1>Events</h1>
+            <p>upcoming events and past events here!! maybe embed gcal?</p>
+        </div>
+        <div class="sponsors section grey">
+            <h1>Sponsors</h1>
+            <p>sponsors here :p</p>
+        </div>
+
     </main>
 </Layout>
 <style>
+    .grey {
+        background: rgb(239, 237, 241);
+    }
+    .findMore {
+        width: fit-content;
+        color: white!important;
+        background: rgb(116,76,213);
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
+        margin-top: 1.6rem;
+    }
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+    }
+    p {
+        font-size: 1.3rem;
+        font-weight: 400;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+    }
+    .section {
+        padding: 5rem 7rem;
+    }
     .splashContent {
-        /* background: red; */
         width: 100%;
         height: 100%;
         display: flex;
@@ -52,6 +98,10 @@ import Layout from '../layouts/defaultLayout.astro';
         background-color: white;
         color: #633dbd;
         cursor: pointer;
+        transition: all 0.2s ease-out;
+    }
+    .splashBtn:hover {
+        background-color: #ffffffde;
     }
     .splashTitle {
         font-size: 5rem;
@@ -79,7 +129,7 @@ import Layout from '../layouts/defaultLayout.astro';
         height: calc(100vh - 17rem);
         width: 100%;
     }
-    .main {
+    main, .main {
         width: 100%;
         padding: 0;
         margin: 0;
