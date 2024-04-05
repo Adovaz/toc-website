@@ -1,9 +1,80 @@
 <div class="footer">
-    <p>bleh footer blehh</p>
-    socials links, contact email, where is toc, linktree
+    <!-- <p>bleh footer blehh</p> -->
+    <!-- socials links, contact email, where is toc, linktree, copyright, src -->
+    <div class="section spaced">
+        <a href="#">Find QSpace</a>
+        <a href="#">Email Us</a>
+        <a href="#">LinkTree</a>
+    </div>
+    <div class="section stack">
+        <a href="/"><img src="./tocIconRound.png" class="footerLogo" alt="Trans on Campus"/></a>
+        <div><a href="https://github.com/wiki-Bird/toc-website">© 2024 Trans on Campus</a></div>
+    </div>
+    <div class="section">
+        <a href="https://discord.gg/wHNrGSpfwd" target="_blank" rel="noopener noreferrer">
+            <img src="./icons/discord2.svg" class="footerSocial" alt="Discord"/>
+        </a>
+        <a href="https://instagram.com/toc_uoa" target="_blank" rel="noopener noreferrer">
+            <img src="./icons/insta2.svg" class="footerSocial" alt="Instagram"/>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100085172237348" target="_blank" rel="noopener noreferrer">
+            <img src="./icons/facebook2.svg" class="footerSocial" alt="Facebook"/>
+        </a>
+        <a href="https://github.com/wiki-Bird/toc-website" target="_blank" rel="noopener noreferrer">
+            <img src="./icons/git.svg" class="footerSocial" alt="Source"/>
+        </a>
+        <!-- <a href="mailto:transoncampus.uoa@gmail.com" target="_blank" rel="noopener noreferrer">
+            <img src="./icons/mail.png" class="footerSocial" alt="Email"/>
+        </a> -->
+    </div>
 </div>
 <style>
+    .spaced {
+        gap: 1.3em;
+    }
+    .inline {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .footerSocial {
+        width: 2.3em;
+        height: 2.3em;
+        margin: 0.5em;
+    }
+    .footerLogo {
+        width: 3em;
+        margin: 0.5em;
+    }
+    .stack {
+        display: flex;
+        flex-direction: column!important;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+    }
+    .section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .section a {
+        color: white;
+        text-decoration: none;
+    }
+    .section a:hover {
+        text-decoration: underline;
+    }
     .footer {
+        /* break into 3 sections */
+        padding: 1.5em;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
         margin: 0;
         background: rgb(116,76,213);
         background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 60%, rgba(134,117,241,1) 100%);

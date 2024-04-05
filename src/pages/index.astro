@@ -17,7 +17,7 @@ import Layout from '../layouts/defaultLayout.astro';
                     <div class="splashTitle"> Trans on Campus </div>
                     <div class="splashSubtitle">
                         ToC is a support network, social group, and advocacy group
-                        for Gender Deverse & Questioning students in Auckland. Welcome &lt;3
+                        for Gender Deverse & Questioning students in Auckland.
                     </div>
                 </div>
                 <div class="splashButtons">
@@ -41,16 +41,77 @@ import Layout from '../layouts/defaultLayout.astro';
         </div>
         <div class="events section">
             <h1>Events</h1>
-            <p>upcoming events and past events here!! maybe embed gcal?</p>
+            <p>upcoming events and past events here!! maybe embed a google calender or instagram feed?</p>
         </div>
-        <div class="sponsors section grey">
-            <h1>Sponsors</h1>
-            <p>sponsors here :p</p>
+        <div class="join section transFlag">
+            <h1>Become a ToC Member!</h1>
+            <p>
+                Membership is free & for everyone!<br><br>
+                ToC members are invited to our awesome events, and every membership helps secure funding to provide more support.
+                Membership doesn't roll over so you need to fill out this form each year.</p>
+            <div class="joinBtns">
+                <div class="splashBtn findMore">Join ToC</div>
+                <div class="splashBtn findMore">Talk on Discord</div>
+            </div>
         </div>
+        <div class="sponsors section">
+            <div class="leftSide">
+                <h1>Proudly supported by our sponsors</h1>
+            </div>
+            <div class="rightSide">
+                <img src="./sponsors/ikea.png" alt="" class="sponsorLogo">
+                <img src="./sponsors/jeff.png" alt="" class="sponsorLogo">
+                <img src="./sponsors/finland.png" alt="" class="sponsorLogo">
+                <img src="./sponsors/jerma.webp" alt="" class="sponsorLogo">
+                <img src="./sponsors/movieNight.webp" alt="" class="sponsorLogo">
+                <img src="./sponsors/pizza.png" alt="" class="sponsorLogo">
+            </div>
+        </div>
+
 
     </main>
 </Layout>
 <style>
+    .joinBtns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .sponsorLogo {
+        width: 10rem;
+        margin-right: 5rem;
+    }
+    .transFlag {
+        background: rgb(214, 108, 124);
+        background: linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%); 
+    }
+    .transFlag h1 {
+        color: #fff;
+        text-shadow: 0 0 1rem rgba(17, 0, 44, 0.212);
+    }
+    .transFlag p {
+        color: #fff;
+        text-shadow: 0 0 1rem rgba(17, 0, 44, 0.397);
+    }
+    .sponsors {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .rightSide {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .leftSide {
+        flex: 0.30;
+        height: 100%;
+        margin-right: 4rem;
+    }
     .grey {
         background: rgb(239, 237, 241);
     }
@@ -66,12 +127,15 @@ import Layout from '../layouts/defaultLayout.astro';
         font-weight: 700;
         font-family: "Metropolis", "Inter", system-ui, sans-serif;
         margin: 0;
+        margin-bottom: 1rem;
+        color: #0b0025;
     }
     p {
         font-size: 1.3rem;
         font-weight: 400;
         font-family: "Metropolis", "Inter", system-ui, sans-serif;
         margin: 0;
+        color: #0b0025;
     }
     .section {
         padding: 5rem 7rem;
