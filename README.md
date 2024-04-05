@@ -1,27 +1,32 @@
 <br>
 <div align="center">
-<a href="#todo" target="_blank" rel="noreferrer noopener"><img width="130" alt="toc logo" src="./public/tocIconRound.webp"></a>
+<a href="#todo" target="_blank" rel="noreferrer noopener"><img width="130" alt="toc logo" src="./public/tocIconRound.png"></a>
 
 ### ToC Website
 
-The website for Trans on Campus at the University of Auckland
-
-</div>
+The website for Trans on Campus, a support network, social group, and advocacy group for Gender Deverse & Questioning students in Auckland.
 
 ## Contents
 
 - [Contributing](#contributing)
+  - [Writing Content](#writing)
   - [Development](#development)
-  - [Writing](#writing)
-- [Setup](#setup)
-  - [Development](#development-server)
-  - [Production deployment](#production-deployment)
-- [Project Structure](#project-structure)
+    - [Setup](#setup)
+    - [Development](#development-server)
+    - [Project Structure](#project-structure)
 - [Contact](#contact)
 
 ## Contributing
 
 Please feel free to contribute to the upkeep and development of the website by making Pull Requests or raising Issues.
+
+## Writing
+
+[TODO]
+
+The website uses Markdown for content pages. To add a new page, create a new `.md` file in the `src/content` directory, using the `template.md` file as a guide.
+
+You do not need to know how to program to write content, simply use basic Markdown syntax to format your text.
 
 ## Development
 
@@ -31,16 +36,7 @@ Astro provides our templating, meaning we can create and reuse components across
 
 To add a new page, create a new `.astro` file in the `src/pages` directory. To add a new component, create a new `.astro` file in the `src/components` directory. Most pages use the `defaultLayout.astro` component to maintain a consistent look and feel.
 
-## Writing
-
-> [!CAUTION]
-> TODO
-
-The website uses Markdown for content pages. To add a new page, create a new `.md` file in the `src/content` directory, using the `temnplate.md` file as a guide.
-
-You do not need to know how to program to write content, simply use basic Markdown syntax to format your text.
-
-## Setup
+### Setup
 
 > [!TIP]
 > It is recommended you work in VSCode with the Astro extension installed.
@@ -51,7 +47,7 @@ You do not need to know how to program to write content, simply use basic Markdo
 $ npm install
 ```
 
-## Development Server
+### Development Server
 
 To start the development server on `http://localhost:4321`, run:
 
@@ -59,11 +55,20 @@ To start the development server on `http://localhost:4321`, run:
 $ npm run dev
 ```
 
-## Production Deployment
+### 🧞 Astro Commands
 
-The website is deployed to [Cloudflare Pages](https://pages.cloudflare.com) on push to the `main` branch. Pages uses the `npm run build` command to build the site.
+All commands are run from the root of the project, from a terminal:
 
-## Project Structure
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+### Project Structure
 
 The project is structured as follows:
 
@@ -91,16 +96,3 @@ The project is structured as follows:
 ## Contact
 
 If you have any questions or need help, please contact [toc@ramiels.me](mailto:toc@ramiels.me)
-
-## 🧞 Astro Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
