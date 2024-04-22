@@ -1,0 +1,25 @@
+---
+interface Props {
+	title: string;
+    subtitle: string;
+	image: string;
+	href: string;
+    style: string;
+}
+
+const { href, title, subtitle, image, style } = Astro.props;
+---
+
+<li class=`link-card ${style}`>
+	<a href={href} target="_blank" rel="noopener noreferrer">
+        <img src={image} alt={title} class="thumbnailImage"/>
+		<div class="titles">
+            <div class="title">
+                {title}
+            </div>
+            <div class="subtitle">
+                {subtitle}
+            </div>
+        </div>
+	</a>
+</li>

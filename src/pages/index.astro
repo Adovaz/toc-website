@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/defaultLayout.astro';
+import ResourceCard from '../components/ResourceCard.astro';
 ---
 
 <Layout title="Trans on Campus">
@@ -26,35 +27,43 @@ import Layout from '../layouts/defaultLayout.astro';
                 </div>
             </div>
         </div>
-        <div class="about section">
-            <h1>About Us</h1>
-            <p>
-                ToC is when the scriggly wiggly and the wiggly scriggly come together to form a beautiful union of scriggly wiggly wiggly scriggly.
-                When I was a young scrungle, I always wanted to be a scriggly wiggly, but my parents told me that I was a wiggly scriggly. I was so sad.
-                But then I found ToC and I was able to be a scriggly wiggly wiggly scriggly. I was so happy. I love ToC. ToC is my life. ToC is my love. ToC is my everything.
-            </p>
-            <div class="splashBtn findMore">Learn More</div>
-        </div>
-        <div class="resources section grey">
+        <div class="resources section">
             <h1>Resources</h1>
-            <p>some resource cards here :3 and one that links to resources page!!</p>
+            <!-- <p>Some resources which may be helpful</p> -->
+            <!-- <ResourceCard
+
+            /> -->
+        </div>
+        <div class="doubleSection">
+            <div class="about subSection grey">
+                <h1>About Us</h1>
+                <p>
+                    Trans on Campus is a support network, social group, and advocacy
+                    group for Gender Deverse & Questioning students in Auckland.
+                    <br><br>
+                    We provide a safe space for students to meet, socialise, and support each other.
+
+                </p>
+                <div class="splashBtn findMore">Learn More</div>
+            </div>
+            <div class="join subSection transFlag">
+                <h1>Join ToC &lt;3</h1>
+                <p>
+                    Membership is free & for everyone!
+                    <br><br>
+                    ToC members are invited to our awesome events, and every membership helps secure funding to provide more support.
+                    Membership doesn't roll over so you need to fill out this form each year.</p>
+                <div class="joinBtns">
+                    <div class="splashBtn findMore">Join ToC</div>
+                    <div class="splashBtn findMore">Talk on Discord</div>
+                </div>
+            </div>
         </div>
         <div class="events section">
             <h1>Events</h1>
             <p>upcoming events and past events here!! maybe embed a google calender or instagram feed?</p>
         </div>
-        <div class="join section transFlag">
-            <h1>Become a ToC Member!</h1>
-            <p>
-                Membership is free & for everyone!<br><br>
-                ToC members are invited to our awesome events, and every membership helps secure funding to provide more support.
-                Membership doesn't roll over so you need to fill out this form each year.</p>
-            <div class="joinBtns">
-                <div class="splashBtn findMore">Join ToC</div>
-                <div class="splashBtn findMore">Talk on Discord</div>
-            </div>
-        </div>
-        <div class="sponsors section">
+        <div class="sponsors section ">
             <div class="leftSide">
                 <h1>Proudly supported by our sponsors</h1>
             </div>
@@ -71,7 +80,25 @@ import Layout from '../layouts/defaultLayout.astro';
 
     </main>
 </Layout>
+<script>
+    (document.querySelector('.navbar') as HTMLElement).style.background = '#fff';
+</script>
 <style>
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+        margin-bottom: 1rem;
+        color: #0b0025;
+    }
+    p {
+        font-size: 1.4rem;
+        font-weight: 400;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+        color: #0b0025;
+    }
     .joinBtns {
         display: flex;
         flex-direction: row;
@@ -83,7 +110,9 @@ import Layout from '../layouts/defaultLayout.astro';
     }
     .transFlag {
         background: rgb(214, 108, 124);
-        background: linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%); 
+        background: 
+            linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%),
+            url(https://grainy-gradients.vercel.app/noise.svg);
     }
     .transFlag h1 {
         color: #fff;
@@ -122,23 +151,17 @@ import Layout from '../layouts/defaultLayout.astro';
         background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
         margin-top: 1.6rem;
     }
-    h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        font-family: "Metropolis", "Inter", system-ui, sans-serif;
-        margin: 0;
-        margin-bottom: 1rem;
-        color: #0b0025;
-    }
-    p {
-        font-size: 1.3rem;
-        font-weight: 400;
-        font-family: "Metropolis", "Inter", system-ui, sans-serif;
-        margin: 0;
-        color: #0b0025;
-    }
     .section {
         padding: 5rem 7rem;
+    }
+    .doubleSection {
+        display: flex;
+        flex-direction: row;
+    }
+    .subSection {
+        flex: 1;
+        padding: 5rem 7rem;
+
     }
     .splashContent {
         width: 100%;

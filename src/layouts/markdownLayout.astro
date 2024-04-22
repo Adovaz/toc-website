@@ -1,0 +1,61 @@
+---
+import BaseLayout from "./defaultLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout 
+    title={frontmatter.title}
+>
+  <div class="resourcePost">
+    <div class="content">
+        <div class="header">
+            <h1>{frontmatter.title}</h1>
+            <div class="subtitle">
+                <span class="description">{frontmatter.description}</span>
+                • 
+                <span class="date">{frontmatter.pubDate.slice(0, 10)}</span>
+            </div>
+        </div>
+        <div class="resourceContent">
+            <slot />
+        </div>
+    </div>
+  </div>
+</BaseLayout>
+<style>
+    .content {
+        max-width: 730px;
+    }
+    .header {
+        margin-bottom: 5rem;
+    }
+    .resourcePost {
+        padding: 5rem 15rem;
+        display: flex;
+        justify-content: center;
+        background-color: #f9f9f9;
+    }
+    .resourcePost {
+        font-size: 1rem!important;
+    }
+    .resourceContent {
+        margin-bottom: 3rem!important;
+        font-size: min(22px, 1.06rem);
+        line-height: min(30px, 1.63rem);
+        font-family: "Inter", blacksans, Helvetica Neue, Helvetica, sans-serif;
+        font-weight: 400;
+        margin: 0;
+        color: #0b0025;
+    }
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+        margin-bottom: 1rem;
+        color: #0b0025;
+    }
+    /* links */
+
+
+</style>
