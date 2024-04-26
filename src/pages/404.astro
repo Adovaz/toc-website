@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/defaultLayout.astro';
+---
+
+<Layout title="Trans on Campus 404">
+    <main>
+        <img src="/jermaIcon.webp" alt="404" class="icon" />
+        <h1>404: Page not Found</h1>
+        <p>please <a href="https://github.com/wiki-Bird/toc-website/issues" target="_blank" rel="noopener noreferrer">let us know</a> if this is an issue! :3</p>
+    </main>
+</Layout>
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 70vh;
+    }
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #0b0025;
+    }
+    p {
+        font-size: 1.1rem;
+        font-weight: 400;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+        color: #0b0025;
+    }
+    .icon {
+        width: 100px;
+        border-radius: 10%;
+    } 
+</style>

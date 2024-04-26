@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/defaultLayout.astro';
 import ResourceCard from '../components/ResourceCard.astro';
+
+const allPosts = await Astro.glob('../pages/resources/*.md');
+const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === true);
 ---
 
 <Layout title="Trans on Campus">
@@ -10,9 +13,9 @@ import ResourceCard from '../components/ResourceCard.astro';
             [x] About (what is TOC, what we do, who we are)
             [x] Resources cards (2-3 cards, more resources btn)
             [] Events (upcoming events, past events)
-            [] Sponsors
+            [x] Sponsors
          -->
-        <div class="splash">
+        <div class="splash purpleBg">
             <div class="splashContent">
                 <div class="splashText">
                     <div class="splashTitle"> Trans on Campus </div>
@@ -22,17 +25,14 @@ import ResourceCard from '../components/ResourceCard.astro';
                     </div>
                 </div>
                 <div class="splashButtons">
-                    <div class="splashBtn joinBtn">Join ToC</div>
-                    <div class="splashBtn aboutBtn">About Us</div>
+                    <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" target="_blank" rel="noopener noreferrer" class="btnLink">
+                        <div class="splashBtn joinBtn">Join ToC</div>
+                    </a>
+                    <a href="/about" class="btnLink">
+                        <div class="splashBtn aboutBtn">About Us</div>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="resources section">
-            <h1>Resources</h1>
-            <!-- <p>Some resources which may be helpful</p> -->
-            <!-- <ResourceCard
-
-            /> -->
         </div>
         <div class="doubleSection">
             <div class="about subSection grey">
@@ -44,7 +44,9 @@ import ResourceCard from '../components/ResourceCard.astro';
                     We provide a safe space for students to meet, socialise, and support each other.
 
                 </p>
-                <div class="splashBtn findMore">Learn More</div>
+                <a href="/about" class="btnLink">
+                    <div class="splashBtn findMore purpleBg">Learn More</div>
+                </a>
             </div>
             <div class="join subSection transFlag">
                 <h1>Join ToC &lt;3</h1>
@@ -54,15 +56,45 @@ import ResourceCard from '../components/ResourceCard.astro';
                     ToC members are invited to our awesome events, and every membership helps secure funding to provide more support.
                     Membership doesn't roll over so you need to fill out this form each year.</p>
                 <div class="joinBtns">
-                    <div class="splashBtn findMore">Join ToC</div>
-                    <div class="splashBtn findMore">Talk on Discord</div>
+                    <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" class="btnLink target="_blank" rel="noopener noreferrer"">
+                        <div class="splashBtn findMore purpleBg">Join ToC</div>
+                    </a>
+                    <a href="/discord" class="btnLink" target="_blank" rel="noopener noreferrer">
+                        <div class="splashBtn findMore purpleBg">Talk on Discord</div>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="events section">
             <h1>Events</h1>
             <p>upcoming events and past events here!! maybe embed a google calender or instagram feed?</p>
+            <br>
+            <p>but yea stuff here about events :) ^ would be nice then u dont have to update website just auto update from insta or w/e</p>
         </div>
+        <div class="resources section purpleBg">
+            <h1>Resources</h1>
+            <div class="resourcesArea">
+                {filteredPosts.map((post) => 
+                    <ResourceCard 
+                        href={post.url} 
+                        title={String(post.frontmatter.title) + " →"}
+                        subtitle={String(post.frontmatter.description)}
+                        image={post.frontmatter.image}
+                        style=""
+                        tags={post.frontmatter.tags}
+                    />
+                )}
+                <ResourceCard 
+                    href="resources" 
+                    title="Find More Resources →"
+                    subtitle="Find our full list of resources here"
+                    image="https://images.squarespace-cdn.com/content/v1/5f8d6f1d6f5d9d6f06cf8f99/1620275756922-VKCB7CXJKPVYL9XFV08I/pexels-oriel-frankie-ashcroft-6054387.jpg"
+                    style=""
+                    tags={["More"]}
+                />
+            </div>
+        </div>
+
         <div class="sponsors section ">
             <div class="leftSide">
                 <h1>Proudly supported by our sponsors</h1>
@@ -84,6 +116,9 @@ import ResourceCard from '../components/ResourceCard.astro';
     (document.querySelector('.navbar') as HTMLElement).style.background = '#fff';
 </script>
 <style>
+    .btnLink {
+        text-decoration: none;
+    }
     h1 {
         font-size: 3rem;
         font-weight: 700;
@@ -108,13 +143,17 @@ import ResourceCard from '../components/ResourceCard.astro';
         width: 10rem;
         margin-right: 5rem;
     }
+    .orangeBg {
+        background: linear-gradient(29deg, rgb(223, 134, 0) 0%, rgb(221, 88, 0), rgb(223, 134, 0) 100%);
+        color: #f9f7ff;
+    }
     .transFlag {
         background: rgb(214, 108, 124);
         background: 
             linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%),
             url(https://grainy-gradients.vercel.app/noise.svg);
     }
-    .transFlag h1 {
+    .transFlag h1, .purpleBg h1 {
         color: #fff;
         text-shadow: 0 0 1rem rgba(17, 0, 44, 0.212);
     }
@@ -144,11 +183,13 @@ import ResourceCard from '../components/ResourceCard.astro';
     .grey {
         background: rgb(239, 237, 241);
     }
-    .findMore {
-        width: fit-content;
+    .purpleBg {
         color: white!important;
         background: rgb(116,76,213);
         background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
+    }
+    .findMore {
+        width: fit-content;
         margin-top: 1.6rem;
     }
     .section {
@@ -190,6 +231,9 @@ import ResourceCard from '../components/ResourceCard.astro';
     .splashBtn:hover {
         background-color: #ffffffde;
     }
+    .purpleBg:hover {
+        background-color: rgba(117, 76, 213, 0.795)!important;
+    }
     .splashTitle {
         font-size: 5rem;
         font-weight: 700;
@@ -205,6 +249,15 @@ import ResourceCard from '../components/ResourceCard.astro';
     .splashText {
         color: white;
         padding: 0 7rem 0 7rem;
+    }
+    .resourcesArea {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(20.94rem, 100%), 1fr));
+        grid-gap: 1.8rem;
+        margin: auto;
+        margin-top: 2rem;
+        text-align: center;
+        box-sizing: border-box;
     }
     .splash {
         /* background: rgb(249,222,226);

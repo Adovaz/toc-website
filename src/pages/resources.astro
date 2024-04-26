@@ -1,18 +1,142 @@
 ---
 import Layout from '../layouts/defaultLayout.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+
+const allPosts = await Astro.glob('../pages/resources/*.md');
 ---
 
 <Layout title="Trans on Campus Resources">
     <main>
         <!-- 
-            Splash (welcome to TOC, Join/About btns)
-            About (what is TOC, what we do, who we are)
-            Resources cards (2-3 cards, more resources btn)
-            Events (upcoming events, past events)
-            Sponsors
+            Resources header
+            Sort by tags
+            Resource cards
          -->
-        <div class="splash">
-
+        <div class="section purpleBg resources">
+            <h1>Resources</h1>
+            <p>Find resources for helping you navigate your gender identity.</p>
+            <div class="resourcesArea">
+                <!-- {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)} -->
+                {allPosts.map((post) => 
+                    <ResourceCard 
+                        href={post.url} 
+                        title={String(post.frontmatter.title) + " →"}
+                        subtitle={String(post.frontmatter.description)}
+                        image={post.frontmatter.image}
+                        style=""
+                        tags={post.frontmatter.tags}
+                    />
+                )}
+            </div>
+        </div>
+        <div class="section orangeBg reachOut">
+            <div style="margin-right: 10rem;">
+                <h1>Let's talk </h1>
+                <p>Need to know more? Want to share some information?</p>
+                <div class="joinBtns">
+                    <div class="splashBtn findMore">Contact Us</div>
+                    <div class="splashBtn findMore">Talk on Discord</div>
+                </div>
+            </div>
+            <div>
+                <img src="/movieNight.webp" alt="image" class="talkImage"/>
+            </div>
         </div>
     </main>
 </Layout>
+<script>
+    (document.querySelector('.navbar') as HTMLElement).style.background = '#fff';
+    // (document.querySelector('.footer') as HTMLElement).style.background = 'none';
+    // // set links in footer to black
+    // document.querySelectorAll('.footer a').forEach((link) => {
+    //     (link as HTMLElement).style.color = '#0b0025';
+    // });
+</script>
+<style>
+    .joinBtns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .splashBtn {
+        padding: 1rem 2rem;
+        margin-right: 3rem;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        background-color: white;
+        color: #170346;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+    }
+    .splashBtn:hover {
+        background-color: rgba(255, 255, 255, 0.842);
+    }
+    .section {
+        padding: 4rem 7rem 2rem 7rem;
+    }
+    .purpleBg {
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
+        color: #f9f7ff;
+    }
+    .orangeBg {
+        background: linear-gradient(29deg, rgb(223, 134, 0) 0%, rgb(221, 88, 0), rgb(223, 134, 0) 100%);
+        color: #f9f7ff;
+    }
+    .greyBg {
+        background: rgb(239, 237, 241);
+        color: #0b0025;
+    }
+    .centred {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .reachOut {
+        padding: 7rem 12rem 6rem 12rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .reachOut h1 {
+        margin-bottom: 1rem;
+        font-size: 4rem;
+    }
+    .reachOut p {
+        font-size: 1.5rem;
+    }
+    .talkImage {
+        width: 100%;
+        max-width: 30rem;
+        border-radius: 1rem;
+    }
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+    }
+    p {
+        font-size: 1.4rem;
+        font-weight: 400;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .resourcesArea {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(20.94rem, 100%), 1fr));
+        grid-gap: 1.8rem;
+        margin: auto;
+        margin-bottom: 5%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+</style>

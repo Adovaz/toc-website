@@ -5,7 +5,7 @@ pubDate: 2000-01-01
 description: 'An example resource page to show how markdown works.'
 image:  'https://raw.githubusercontent.com/wiki-Bird/toc-website/main/public/jermaIcon.webp'
 tags: ["Example", "Markdown", "Tags"]
-featured: true
+featured: false
 ---
 
 Markdown is a basic way to write content, without needing to know how to program. It is a simple way to format text.
