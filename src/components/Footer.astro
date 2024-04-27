@@ -11,7 +11,7 @@
         <div><a href="https://github.com/wiki-Bird/toc-website">© 2024 Trans on Campus</a></div>
     </div>
     <div class="section">
-        <a href="https://discord.gg/wHNrGSpfwd" target="_blank" rel="noopener noreferrer">
+        <a href="/discord" target="_blank" rel="noopener noreferrer">
             <img src="/icons/discord2.svg" class="footerSocial" alt="Discord"/>
         </a>
         <a href="https://instagram.com/toc_uoa" target="_blank" rel="noopener noreferrer">
@@ -29,6 +29,26 @@
     </div>
 </div>
 <style>
+    /* Desktop: */
+    @media only screen and (min-width: 800px) {
+        .footer {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .stack {
+            flex-direction: column!important;
+        }
+    }
+    /* Mobile */
+    @media only screen and (max-width: 799px) {
+        .footer {
+            grid-template-rows: 1fr 1fr;
+        }
+        .stack {
+            display:none!important;
+        }
+    }
+
+
     .spaced {
         gap: 1.3em;
     }
@@ -49,7 +69,6 @@
     }
     .stack {
         display: flex;
-        flex-direction: column!important;
         justify-content: center;
         align-items: center;
         gap: 0.5em;
@@ -73,7 +92,6 @@
         padding: 1.5em;
         color: white;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
         justify-content: center;
         align-items: center;
         margin: 0;

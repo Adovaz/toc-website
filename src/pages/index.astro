@@ -10,9 +10,9 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
     <main>
         <!-- 
             [x] Splash (welcome to TOC, Join/About btns)
-            [x] About (what is TOC, what we do, who we are)
-            [x] Resources cards (2-3 cards, more resources btn)
+            [x] About (what is TOC, what we do, who we are) & Join (join toc, discord btns)
             [] Events (upcoming events, past events)
+            [x] Resources cards (2-3 cards, more resources btn)
             [x] Sponsors
          -->
         <div class="splash purpleBg">
@@ -89,13 +89,12 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
                     title="Find More Resources →"
                     subtitle="Find our full list of resources here"
                     image="https://images.squarespace-cdn.com/content/v1/5f8d6f1d6f5d9d6f06cf8f99/1620275756922-VKCB7CXJKPVYL9XFV08I/pexels-oriel-frankie-ashcroft-6054387.jpg"
-                    style=""
+                    style="greyBg"
                     tags={["More"]}
                 />
             </div>
         </div>
-
-        <div class="sponsors section ">
+        <div class="sponsors section">
             <div class="leftSide">
                 <h1>Proudly supported by our sponsors</h1>
             </div>
@@ -108,40 +107,119 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
                 <img src="./sponsors/pizza.png" alt="" class="sponsorLogo">
             </div>
         </div>
-
-
     </main>
 </Layout>
 <script>
     (document.querySelector('.navbar') as HTMLElement).style.background = '#fff';
 </script>
 <style>
+    /* Desktop: */
+    @media only screen and (min-width: 800px) {
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+        .sponsorLogo {
+            width: 10rem;
+            margin-right: 5rem;
+        }
+        .section, .subSection {
+            padding: 5rem 7rem;
+        }
+        .splashTitle {
+            font-size: 5rem;
+        }
+        .splashSubtitle {
+            font-size: 1.7rem;
+            width: 70%;
+        }
+        .splashText {
+            padding: 0 7rem 0 7rem;
+        }
+        .splashButtons {
+            padding: 0 7rem 0 7rem;
+            margin-top: 4rem;
+        }
+        .splashBtn {
+            padding: 1rem 2rem;
+            margin-right: 3rem;
+            font-size: 1.2rem;
+        }
+        .splash {
+            height: calc(100vh - 17rem);
+        }
+        .doubleSection {
+            flex-direction: row;
+        }
+        .leftSide {
+            margin-right: 4rem;
+        }
+    }
+    /* Mobile */
+    @media only screen and (max-width: 799px) {
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .sponsorLogo {
+            width: 5rem;
+            margin-right: 2rem;
+        }
+        .section, .subSection {
+            padding: 2rem 2rem;
+        }
+        .splashTitle {
+            font-size: 2.5rem;
+        }
+        .splashSubtitle {
+            font-size: 1.3rem;
+        }
+        .splashText {
+            padding: 0 2rem 0 2rem;
+        }
+        .splashButtons {
+            padding: 0 2rem 0 2rem;
+            margin-top: 2rem;
+        }
+        .splashBtn {
+            padding: 0.8rem 1rem;
+            margin-right: 1rem;
+            font-size: 1rem;
+        }
+        .splash {
+            padding: 3rem 0;
+        }
+        .doubleSection {
+            flex-direction: column;
+        }
+        .leftSide {
+            margin-right: 2rem;
+        }
+    }
+
     .btnLink {
         text-decoration: none;
     }
-    h1 {
-        font-size: 3rem;
-        font-weight: 700;
+    h1, p {
         font-family: "Metropolis", "Inter", system-ui, sans-serif;
         margin: 0;
-        margin-bottom: 1rem;
         color: #0b0025;
     }
+    h1 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
     p {
-        font-size: 1.4rem;
         font-weight: 400;
-        font-family: "Metropolis", "Inter", system-ui, sans-serif;
-        margin: 0;
-        color: #0b0025;
     }
     .joinBtns {
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
-    .sponsorLogo {
-        width: 10rem;
-        margin-right: 5rem;
     }
     .orangeBg {
         background: linear-gradient(29deg, rgb(223, 134, 0) 0%, rgb(221, 88, 0), rgb(223, 134, 0) 100%);
@@ -161,6 +239,14 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
         color: #fff;
         text-shadow: 0 0 1rem rgba(17, 0, 44, 0.397);
     }
+    .grey {
+        background: rgb(239, 237, 241);
+    }
+    .purpleBg {
+        color: white!important;
+        background: rgb(116,76,213);
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
+    }
     .sponsors {
         display: flex;
         flex-direction: row;
@@ -178,31 +264,16 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
     .leftSide {
         flex: 0.30;
         height: 100%;
-        margin-right: 4rem;
-    }
-    .grey {
-        background: rgb(239, 237, 241);
-    }
-    .purpleBg {
-        color: white!important;
-        background: rgb(116,76,213);
-        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
     }
     .findMore {
         width: fit-content;
         margin-top: 1.6rem;
     }
-    .section {
-        padding: 5rem 7rem;
-    }
     .doubleSection {
         display: flex;
-        flex-direction: row;
     }
     .subSection {
         flex: 1;
-        padding: 5rem 7rem;
-
     }
     .splashContent {
         width: 100%;
@@ -213,14 +284,9 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
     }
     .splashButtons {
         display: flex;
-        padding: 0 7rem 0 7rem;
-        margin-top: 4rem;
     }
     .splashBtn {
-        padding: 1rem 2rem;
-        margin-right: 3rem;
         border-radius: 0.5rem;
-        font-size: 1.2rem;
         font-weight: 600;
         font-family: "Metropolis", "Inter", system-ui, sans-serif;
         background-color: white;
@@ -235,20 +301,16 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
         background-color: rgba(117, 76, 213, 0.795)!important;
     }
     .splashTitle {
-        font-size: 5rem;
         font-weight: 700;
         font-family: "Metropolis", "Inter", system-ui, sans-serif;
     }
     .splashSubtitle {
-        font-size: 1.7rem;
         font-weight: 400;
         font-family: "Metropolis", "Inter", system-ui, sans-serif;
-        width: 70%;
         margin-top: 1rem;
     }
     .splashText {
         color: white;
-        padding: 0 7rem 0 7rem;
     }
     .resourcesArea {
         display: grid;
@@ -256,17 +318,13 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
         grid-gap: 1.8rem;
         margin: auto;
         margin-top: 2rem;
+        margin-bottom: 2rem;
         text-align: center;
         box-sizing: border-box;
     }
     .splash {
-        /* background: rgb(249,222,226);
-        background: radial-gradient(circle, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 50%, rgba(86,203,251,1) 100%);         background-position: center; */
-        /* background: rgb(249,222,226);
-        background: linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%);  */
         background: rgb(116,76,213);
         background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 60%, rgba(134,117,241,1) 100%);
-        height: calc(100vh - 17rem);
         width: 100%;
     }
     main, .main {

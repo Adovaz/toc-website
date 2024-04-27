@@ -2,36 +2,68 @@
 
 ---
 <div class="navbar">
-    <!-- navbar:
-        - home
-        - resources
-        - about
-        - events
-        - sponsors
-        - join (button)
-    -->
-
     <div class="navbarLeft">
         <a href="/" class="navbarLogo">
-            <img src="/tocTempLogo.png" class="logo" alt="Trans on Campus">
+            <img src="/tocIconRound.png" class="logo" alt="Trans on Campus">
         </a>
 
         <ul class="navbarList">
-            <!-- <li><a href="/">Home</a></li> -->
             <li><a href="/resources/">Resources</a></li>
-            <li><a href="/about/">About</a></li>
             <li><a href="/events/">Events</a></li>
             <li><a href="/linktree/">LinkTree</a></li>
-            <!-- <li><a href="/sponsors/">Sponsors</a></li> -->
+            <li><a href="/about/">About</a></li>
+            <!-- <li><a href="/contact/">Contact</a></li> -->
         </ul>
     </div>
 
     <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" class="navbarButton" target="_blank" rel="noopener noreferrer">
-        Join ToC
+        Join
     </a>
-
 </div>
 <style>
+    /* Desktop: */
+    @media only screen and (min-width: 800px) {
+        .navbarLogo img {
+            /* width: 3em; */
+            height: 3em;
+            /* margin: 0.5em;  */
+        }
+        .navbar {
+            font-size: 1.3em;
+            padding: 0 30px;
+        }
+        .navbarList li {
+            padding: 14px 16px;
+        }
+        .navbarButton {
+            font-size: 16px;
+            margin: 4px 2px;
+            padding: 14px 20px;
+        }
+    }
+    /* Mobile */
+    @media only screen and (max-width: 799px) {
+        .navbarLogo img {
+            /* width: 3em; */
+            height: 3em;
+            margin-left: 0.5em;
+            /* display:none!important; */
+            /* margin: 0.5em;  */
+        }
+        .navbar {
+            font-size: 1em;
+            padding: 0 9px;
+        }
+        .navbarList li {
+            padding: 3px 8px;
+        }
+        .navbarButton {
+            font-size: 1rem;
+            margin: 8px 2px;
+            padding: 10px 15px;
+        }
+    }
+
     .navbarButton {
         background-color: #734ad3;
         background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
@@ -40,10 +72,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
         cursor: pointer;
-        padding: 14px 20px;
         border-radius: 5px;
         float: right;
     }
@@ -57,7 +86,6 @@
         align-items: center;
     }
     .navbar {
-        /* background: white; */
         background: rgb(214, 108, 124);
         background: 
             linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%),
@@ -68,8 +96,6 @@
         justify-content: space-between;
         align-items: center;
         font-weight: 600;
-        font-size: 1.3em;
-        padding: 0 30px;
         font-family: "Metropolis", "Inter", system-ui, sans-serif;
     }
     .nabarList {
@@ -83,7 +109,6 @@
         float: left;
         display: inline;
         text-align: center;
-        padding: 14px 16px;
         text-decoration: none;
     }
     .navbarList li a {
@@ -92,13 +117,8 @@
     }
     .navbarList li a:hover {
         color: rgb(3, 0, 10);
-        /* underline */
         text-decoration: underline;
     }
-    .navbarLogo img {
-        /* width: 3em; */
-        height: 3em;
-        /* margin: 0.5em;  */
-    }
+
 
 </style>
