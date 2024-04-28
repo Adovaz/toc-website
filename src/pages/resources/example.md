@@ -1,11 +1,12 @@
 ---
 layout: ../../layouts/markdownLayout.astro
 title: 'Example Resource Page'
-pubDate: 2000-01-01
+pubDate: 19/3/2024
 description: 'An example resource page to show how markdown works.'
 image:  'https://raw.githubusercontent.com/wiki-Bird/toc-website/main/public/jermaIcon.webp'
-tags: ["Example", "Markdown", "Tags"]
+tags: ["General"]
 featured: true
+pdf: ""
 ---
 
 Markdown is a basic way to write content, without needing to know how to program. It is a simple way to format text.

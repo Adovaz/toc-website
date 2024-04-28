@@ -39,7 +39,7 @@ import Footer from '../components/Footer.astro';
         <link rel="manifest" href="../favicon/site.webmanifest">
 
 		<meta name="generator" content={Astro.generator} />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<title>{title}</title>
 	</head>
     <body>
@@ -50,6 +50,20 @@ import Footer from '../components/Footer.astro';
             <Footer />
     </body>
 <style is:global>
+    /* Desktop: */
+    @media only screen and (min-width: 800px) {
+        .pageContent {
+            flex: 1 0 auto;
+        }
+    }
+    /* Mobile */
+    @media only screen and (max-width: 799px) {
+        .pageContent {
+
+        }
+    }
+
+
     :root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -99,9 +113,6 @@ import Footer from '../components/Footer.astro';
         font-weight: 700;
         font-style: normal;
         font-display: swap;
-    }
-    .pageContent {
-        flex: 1 0 auto;
     }
     blockquote {
         margin: 0;

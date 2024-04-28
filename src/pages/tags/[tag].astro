@@ -1,0 +1,217 @@
+---
+import Layout from '../../layouts/defaultLayout.astro';
+import ResourceCard from '../../components/ResourceCard.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob('../resources/*.md');
+
+  const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const tags = [...new Set(posts.map((post) => post.frontmatter.tags).flat())];
+---
+<Layout title="Trans on Campus • Resources">
+    <main>
+        <div class="section purpleBg resources">
+            <h1>Resources</h1>
+            <p>Find resources for helping you navigate your gender identity.</p>
+            <div class="tagsArea">
+                <a href={`/resources`} style="text-decoration:none"><div class="resourceTag">
+                    × {tag}
+                </div></a>
+            </div>
+            <div class="resourcesArea">
+                {posts.map((post) => 
+                    <ResourceCard 
+                        href={post.frontmatter.pdf ? post.frontmatter.pdf : post.url} 
+                        title={String(post.frontmatter.title) + " →"}
+                        subtitle={String(post.frontmatter.description)}
+                        image={post.frontmatter.image}
+                        style=""
+                        tags={post.frontmatter.tags}
+                        target={post.frontmatter.pdf ? "_blank" : ""}
+                    />
+                )}
+            </div>
+        </div>
+        <div class="section orangeBg reachOut">
+            <div class="infoArea">
+                <h1>Let's talk </h1>
+                <p>Need to know more? Want to share some information?</p>
+                <div class="joinBtns">
+                    <div class="splashBtn findMore">Contact Us</div>
+                    <div class="splashBtn findMore">Talk on Discord</div>
+                </div>
+            </div>
+            <div class="imageArea">
+                <img src="/movieNight.webp" alt="image" class="talkImage"/>
+            </div>
+        </div>
+    </main>
+</Layout>
+<script>
+    (document.querySelector('.navbar') as HTMLElement).style.background = '#fff';
+</script>
+<style>
+    /* Desktop: */
+    @media only screen and (min-width: 800px) {
+        .section {
+            padding: 4rem 7rem 2rem 7rem;
+        }
+        .reachOut {
+            padding: 7rem 12rem 6rem 12rem;
+        }
+        .reachOut h1 {
+            margin-bottom: 1rem;
+            font-size: 4rem;
+        }
+        .reachOut p {
+            font-size: 1.5rem;
+        }
+        .splashBtn {
+            padding: 1rem 2rem;
+            margin-right: 3rem;
+            font-size: 1.2rem;
+        }
+        .talkImage {
+            width: 100%;
+            max-width: 30rem;
+            border-radius: 1rem;
+        }
+        .infoArea {
+            margin-right: 10rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+    }
+    /* Mobile */
+    @media only screen and (max-width: 799px) {
+        .section, .reachOut {
+            padding: 2rem 2rem;
+        }
+        .reachOut h1 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        .reachOut p {
+            font-size: 1.2rem;
+        }
+        .splashBtn {
+            padding: 0.8rem 1rem;
+            margin-right: 1rem;
+            font-size: 1rem;
+        }
+        .imageArea {
+            display: none;
+        }
+        h1 {
+            font-size: 2.7rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .tagsArea {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        margin-bottom: 2rem;
+    }
+    .resourceTag {
+        background-color: #502aa3;
+        color: #f9f7ff;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        padding: 0.5rem 1rem;
+    }
+    .resourceTag:hover {
+        background-color: #3c1f7d;
+    }
+    .joinBtns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .splashBtn {
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        background-color: white;
+        color: #170346;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        
+    }
+    .splashBtn:hover {
+        background-color: rgba(255, 255, 255, 0.842);
+    }
+
+    .purpleBg {
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
+        color: #f9f7ff;
+    }
+    .orangeBg {
+        background: linear-gradient(29deg, rgb(223, 134, 0) 0%, rgb(221, 88, 0), rgb(223, 134, 0) 100%);
+        color: #f9f7ff;
+    }
+    .greyBg {
+        background: rgb(239, 237, 241);
+        color: #0b0025;
+    }
+    .centred {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .reachOut {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1 {
+        font-weight: 700;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+    }
+    p {
+        font-weight: 400;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .resourcesArea {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(20.94rem, 100%), 1fr));
+        grid-gap: 1.8rem;
+        margin: auto;
+        margin-bottom: 5%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+</style>

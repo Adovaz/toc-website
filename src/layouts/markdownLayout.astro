@@ -23,6 +23,31 @@ const { frontmatter } = Astro.props;
   </div>
 </BaseLayout>
 <style>
+    /* Desktop: */
+    @media only screen and (min-width: 800px) {
+        .resourcePost {
+            padding: 5rem 15rem;
+        }
+        .resourceContent {
+            font-size: min(22px, 1.06rem);
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    /* Mobile */
+    @media only screen and (max-width: 799px) {
+        .resourcePost {
+            padding: 2rem 2rem;
+        }
+        .resourceContent {
+            font-size: min(22px, 1rem);
+        }
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
     .content {
         max-width: 730px;
     }
@@ -30,7 +55,6 @@ const { frontmatter } = Astro.props;
         margin-bottom: 5rem;
     }
     .resourcePost {
-        padding: 5rem 15rem;
         display: flex;
         justify-content: center;
         background-color: #f9f9f9;
@@ -40,7 +64,6 @@ const { frontmatter } = Astro.props;
     }
     .resourceContent {
         margin-bottom: 3rem!important;
-        font-size: min(22px, 1.06rem);
         line-height: min(30px, 1.63rem);
         font-family: "Inter", blacksans, Helvetica Neue, Helvetica, sans-serif;
         font-weight: 400;
@@ -48,7 +71,6 @@ const { frontmatter } = Astro.props;
         color: #0b0025;
     }
     h1 {
-        font-size: 3rem;
         font-weight: 700;
         font-family: "Metropolis", "Inter", system-ui, sans-serif;
         margin: 0;

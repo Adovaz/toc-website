@@ -4,8 +4,9 @@ title: 'Voice Training Resources'
 pubDate: 19/3/2024
 description: 'Free voice training resources, for all voice goals'
 image:  'https://images.squarespace-cdn.com/content/v1/5f8d6f1d6f5d9d6f06cf8f99/1623639683720-NL3OKDJY11GVI1NVL5WL/52605675_10213739495065104_6252029639036764160_o.jpg'
-tags: ["Voice Training", "Medical", "Free"]
+tags: ["Life admin How To's"]
 featured: true
+pdf: ""
 ---
 
 Hi all! We have recently been in touch with Dr. Mershen Pillay, who offers FREE voice training sessions. If you are having trouble accessing voice training via other means, we highly suggest getting in touch. Dr. Mershen Pillay's services are for everyone no matter what your voice goals are, including voice training for transmasc folks as well as people who have voice goals outside of the binary.
