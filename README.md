@@ -23,11 +23,11 @@ Please feel free to contribute to the upkeep and development of the website by m
 
 ## Writing
 
-[TODO]
-
-The website uses Markdown for content pages. To add a new page, create a new `.md` file in the `src/content` directory, using the `template.md` file as a guide.
+The website uses [Markdown](https://www.markdownguide.org/cheat-sheet/) for content pages. To add a new page, create a new `.md` file in the `src/pages/resources` directory, using the `example.md` file as a guide.
 
 You do not need to know how to program to write content, simply use basic Markdown syntax to format your text.
+
+You must also fill in the md header, which is used to display resources on the site.
 
 ## Development
 
@@ -55,44 +55,6 @@ To start the development server on `http://localhost:4321`, run:
 ```bash
 $ npm run dev
 ```
-
-### 🧞 Astro Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-### Project Structure
-
-The project is structured as follows:
-
-```text
-/
-├── public/
-│   └── siteImage.jpg
-├── src/
-│   ├── components/
-│   │   └── siteComponent.astro
-│   ├── layouts/
-│   │   └── pageLayout.astro
-│   └── pages/
-│       └── page.astro
-└── package.json
-```
-
-- `public/` contains static files like images and favicons.
-- `src/` contains all the source code for the website.
-  - `components/` contains reusable components.
-  - `layouts/` contains layout components.
-  - `pages/` contains the pages of the website.
-- `package.json` contains the project's dependencies and scripts.
 
 ## Contact
 
