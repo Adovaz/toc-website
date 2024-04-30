@@ -14,23 +14,31 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
             [] Events (upcoming events, past events)
             [x] Resources cards (2-3 cards, more resources btn)
             [x] Sponsors
+
+                    background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-image: url('/lights.jpg');
          -->
-        <div class="splash purpleBg">
-            <div class="splashContent">
-                <div class="splashText">
-                    <div class="splashTitle"> Trans on Campus </div>
-                    <div class="splashSubtitle">
-                        ToC is a support network, social group, and advocacy group
-                        for Gender Deverse & Questioning students in Auckland.
+        <div class="splashBack">
+            <div class="splash">
+                <div class="splashOverlay"></div>
+                <div class="splashContent">
+                    <div class="splashText">
+                        <div class="splashTitle"> Trans on Campus </div>
+                        <div class="splashSubtitle">
+                            ToC is a support network, social group, and advocacy group
+                            for Gender Deverse & Questioning students in Auckland.
+                        </div>
                     </div>
-                </div>
-                <div class="splashButtons">
-                    <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" target="_blank" rel="noopener noreferrer" class="btnLink">
-                        <div class="splashBtn joinBtn">Join ToC</div>
-                    </a>
-                    <a href="/about" class="btnLink">
-                        <div class="splashBtn aboutBtn">About Us</div>
-                    </a>
+                    <div class="splashButtons">
+                        <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" target="_blank" rel="noopener noreferrer" class="btnLink">
+                            <div class="splashBtn joinBtn">Join ToC</div>
+                        </a>
+                        <a href="/about" class="btnLink">
+                            <div class="splashBtn aboutBtn">About Us</div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -284,6 +292,8 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
         display: flex;
         flex-direction: column;
         justify-content: center;
+        position: relative;
+        z-index: 2; /* Ensure content is above the overlay */
     }
     .splashButtons {
         display: flex;
@@ -326,9 +336,21 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
         box-sizing: border-box;
     }
     .splash {
-        background: rgb(116,76,213);
-        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 60%, rgba(134,117,241,1) 100%);
+        position: relative; 
         width: 100%;
+        background: rgb(116,76,213);
+        background-image: url('/pride.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    .splashOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,.9) 60%, rgba(134,117,241,.5) 100%);
+        z-index: 1; /* Ensure the overlay is above the background image */
     }
     main, .main {
         width: 100%;
