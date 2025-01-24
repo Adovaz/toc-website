@@ -4,17 +4,17 @@
 
 ### ToC Website
 
-The website for Trans on Campus, a support network, social group, and advocacy group for Gender Deverse & Questioning students in Auckland.
+The website for Trans on Campus, a support network, social group, and advocacy group for Gender Diverse & Questioning students in Auckland.
 </div>
 
 ## Contents
 
+- [Contents](#contents)
 - [Contributing](#contributing)
-  - [Writing Content](#writing)
-  - [Development](#development)
-    - [Setup](#setup)
-    - [Development](#development-server)
-    - [Project Structure](#project-structure)
+- [Writing](#writing)
+- [Development](#development)
+  - [Setup](#setup)
+  - [Development Server](#development-server)
 - [Contact](#contact)
 
 ## Contributing

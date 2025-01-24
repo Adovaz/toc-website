@@ -1,28 +1,325 @@
 ---
 import Layout from '../layouts/defaultLayout.astro';
----
+import PersonCard from '../components/PersonCard.astro';
 
+---
 <Layout title="Trans on Campus • About">
     <main>
-        <h1>About</h1>
-        <p>
-            About ToC goes here
-            <br>
-            <br>
-            Could have description of ToC, what it does, etc
-            Also  where Qspace is?
-            Idk stuff like that ig
+        <div class="people section purpleBg">
+            <h1>Executive Committee</h1>
+            <div class="personCardArea">
+                <!--{filteredPosts.slice(0, 3).map((post) => 
+                    <PersonCard 
+                        title={String(post.frontmatter.title)}
+                        subtitle={String(post.frontmatter.description)}
+                        image={post.frontmatter.image}
+                        style=""
+                        target=""
+                    />
+                )}-->
+                <PersonCard
+                    title="Firstname Lastname"
+                    subtitle="Subtitle"
+                    image="https://images.squarespace-cdn.com/content/v1/5f8d6f1d6f5d9d6f06cf8f99/1620275756922-VKCB7CXJKPVYL9XFV08I/pexels-oriel-frankie-ashcroft-6054387.jpg"
+                    style="greyBg"
+                    target=""
+                />
+                <PersonCard
+                    title="Firstname Lastname"
+                    subtitle="Subtitle"
+                    image="https://images.squarespace-cdn.com/content/v1/5f8d6f1d6f5d9d6f06cf8f99/1620275756922-VKCB7CXJKPVYL9XFV08I/pexels-oriel-frankie-ashcroft-6054387.jpg"
+                    style="greyBg"
+                    target=""
+                />
+                <PersonCard
+                    title="Firstname Lastname"
+                    subtitle="Subtitle"
+                    image="https://images.squarespace-cdn.com/content/v1/5f8d6f1d6f5d9d6f06cf8f99/1620275756922-VKCB7CXJKPVYL9XFV08I/pexels-oriel-frankie-ashcroft-6054387.jpg"
+                    style="greyBg"
+                    target=""
+                />
+                <PersonCard
+                    title="Firstname Lastname"
+                    subtitle="Subtitle"
+                    image="https://images.squarespace-cdn.com/content/v1/5f8d6f1d6f5d9d6f06cf8f99/1620275756922-VKCB7CXJKPVYL9XFV08I/pexels-oriel-frankie-ashcroft-6054387.jpg"
+                    style="greyBg"
+                    target=""
+                />
+            </div>
+        </div>
+        <div class="doubleSection">
+            <div class="findQueerspace subSection grey">
+                <h1>Finding QueerSpace</h1>
+                <p>
+                    Trans on Campus's events are usually held in QueerSpace at the University of Auckland. It is a study space open most days for all Queer students. 
+                    <br><br>
+                    See the video below for how to find QueerSpace.
 
-            suggestion:
-            -quick history section
-            -toc leaders
-            -Typical events per year
-            -general mission statement
-            -Location on campus (if applicable)
-        </p>
+                </p>
+                <a href="https://youtube.com/clip/UgkxkaBIKdU3x_fZ7kchycBvSbQArzjly-mH?si=lvbdfPa2IwML0gHu" target="_blank" rel="noopener noreferrer" class="btnLink">
+                    <div class="splashBtn findMore purpleBg">Find QueerSpace</div>
+                </a>
+            </div>
+            <div class="join subSection transFlag">
+                <h1>Join ToC &lt;3</h1>
+                <p>
+                    Membership is free & for everyone!
+                    <br><br>
+                    ToC members are invited to our awesome events, and every membership helps secure funding to provide more support.
+                    Membership doesn't roll over so you need to fill out this form each year.</p>
+                <div class="joinBtns">
+                    <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" class="btnLink" target="_blank" rel="noopener noreferrer">
+                        <div class="splashBtn findMore purpleBg">Join ToC</div>
+                    </a>
+                    <a href="/discord" class="btnLink" target="_blank" rel="noopener noreferrer">
+                        <div class="splashBtn findMore purpleBg">Chat on Discord</div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
 </Layout>
+
 <script>
+    (document.querySelector('.navbar') as HTMLElement).style.background = '#fff';
+</script>
+
+<style>
+    /* Desktop: */
+    @media only screen and (min-width: 800px) {
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+        .sponsorLogo {
+            width: 10rem;
+            margin-right: 5rem;
+        }
+        .section, .subSection {
+            padding: 5rem 7rem;
+        }
+        .splashTitle {
+            font-size: 5rem;
+        }
+        .splashSubtitle {
+            font-size: 1.7rem;
+            width: 70%;
+        }
+        .splashText {
+            padding: 0 7rem 0 7rem;
+        }
+        .splashButtons {
+            padding: 0 7rem 0 7rem;
+            margin-top: 4rem;
+        }
+        .splashBtn {
+            padding: 1rem 2rem;
+            margin-right: 3rem;
+            font-size: 1.2rem;
+        }
+        .splash {
+            height: calc(100vh - 17rem);
+        }
+        .doubleSection {
+            flex-direction: row;
+        }
+        .leftSide {
+            margin-right: 4rem;
+        }
+    }
+    /* Mobile */
+    @media only screen and (max-width: 799px) {
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .sponsorLogo {
+            width: 5rem;
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+        }
+        .section, .subSection {
+            padding: 2rem 2rem;
+        }
+        .splashTitle {
+            font-size: 2.5rem;
+        }
+        .splashSubtitle {
+            font-size: 1.3rem;
+        }
+        .splashText {
+            padding: 0 2rem 0 2rem;
+        }
+        .splashButtons {
+            padding: 0 2rem 0 2rem;
+            margin-top: 2rem;
+        }
+        .splashBtn {
+            padding: 0.8rem 1rem;
+            margin-right: 1rem;
+            font-size: 1rem;
+        }
+        .splash {
+            padding: 3rem 0;
+        }
+        .doubleSection {
+            flex-direction: column;
+        }
+        .leftSide {
+            margin-right: 2rem;
+        }
+    }
+
+    .btnLink {
+        text-decoration: none;
+    }
+    h1, p {
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin: 0;
+        color: #0b0025;
+    }
+    h1 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    p {
+        font-weight: 400;
+    }
+    .joinBtns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .orangeBg {
+        background: linear-gradient(29deg, rgb(223, 134, 0) 0%, rgb(221, 88, 0), rgb(223, 134, 0) 100%);
+        color: #f9f7ff;
+    }
+    .transFlag {
+        background: rgb(214, 108, 124);
+        background: 
+            linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%),
+            url(https://grainy-gradients.vercel.app/noise.svg);
+    }
+    .transFlag h1, .purpleBg h1 {
+        color: #fff;
+        text-shadow: 0 0 1rem rgba(17, 0, 44, 0.212);
+    }
+    .transFlag p {
+        color: #fff;
+        text-shadow: 0 0 1rem rgba(17, 0, 44, 0.397);
+    }
+    .grey {
+        background: rgb(239, 237, 241);
+    }
+    .purpleBg {
+        color: white!important;
+        background: rgb(116,76,213);
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
+    }
+    .sponsors {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .rightSide {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .leftSide {
+        flex: 0.30;
+        height: 100%;
+    }
+    .findMore {
+        width: fit-content;
+        margin-top: 1.6rem;
+    }
+    .doubleSection {
+        display: flex;
+    }
+    .subSection {
+        flex: 1;
+    }
+    .splashContent {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 2; /* Ensure content is above the overlay */
+    }
+    .splashButtons {
+        display: flex;
+    }
+    .splashBtn {
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        background-color: white;
+        color: #633dbd;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+    }
+    .splashBtn:hover {
+        background-color: #ffffffde;
+    }
+    .purpleBg:hover {
+        background-color: rgba(117, 76, 213, 0.795)!important;
+    }
+    .splashTitle {
+        font-weight: 700;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+    }
+    .splashSubtitle {
+        font-weight: 400;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+        margin-top: 1rem;
+    }
+    .splashText {
+        color: white;
+    }
+    .personCardArea {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(20.94rem, 100%), 1fr));
+        grid-gap: 1.8rem;
+        margin: auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .splash {
+        position: relative; 
+        width: 100%;
+        background: rgb(116,76,213);
+        background-image: url('/pride.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    .splashOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,.9) 60%, rgba(134,117,241,.5) 100%);
+        z-index: 1; /* Ensure the overlay is above the background image */
+    }
+    main, .main {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+</style>
 
 </script>
 <style>

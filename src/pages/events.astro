@@ -1,128 +1,38 @@
 ---
 import Layout from '../layouts/defaultLayout.astro';
-import ResourceCard from '../components/ResourceCard.astro';
-const allPosts = await Astro.glob('../pages/resources/*.md');
-const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === true);
+import EventCard from '../components/EventCard.astro';
+
 ---
-
-<Layout title="Trans on Campus">
+<Layout title="Trans on Campus • Events">
     <main>
-        <!-- 
-            [x] Splash (welcome to TOC, Join/About btns)
-            [x] About (what is TOC, what we do, who we are) & Join (join toc, discord btns)
-            [] Events (upcoming events, past events)
-            [x] Resources cards (2-3 cards, more resources btn)
-            [x] Sponsors
-
-                    background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-image: url('/lights.jpg');
-         -->
-        <div class="splashBack">
-            <div class="splash">
-                <div class="splashOverlay"></div>
-                <div class="splashContent">
-                    <div class="splashText">
-                        <div class="splashTitle"> Trans on Campus </div>
-                        <div class="splashSubtitle">
-                            ToC is a support network, social group, and advocacy group
-                            for Gender Diverse & Questioning students in Auckland.
-                        </div>
-                    </div>
-                    <div class="splashButtons">
-                        <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" target="_blank" rel="noopener noreferrer" class="btnLink">
-                            <div class="splashBtn joinBtn">Join ToC</div>
-                        </a>
-                        <a href="/about" class="btnLink">
-                            <div class="splashBtn aboutBtn">About Us</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="doubleSection">
-            <div class="about subSection grey">
-                <h1>About Us</h1>
-                <p>
-                    Trans on Campus is a support network, social group, and advocacy
-                    group for Gender Diverse & Questioning students in Auckland.
-                    <br><br>
-                    We provide a safe space for students to meet, socialise, and support each other.
-
-                </p>
-                <a href="/about" class="btnLink">
-                    <div class="splashBtn findMore purpleBg">Learn More</div>
-                </a>
-            </div>
-            <div class="join subSection transFlag">
-                <h1>Join ToC &lt;3</h1>
-                <p>
-                    Membership is free & for everyone!
-                    <br><br>
-                    ToC members are invited to our awesome events, and every membership helps secure funding to provide more support.
-                    Membership doesn't roll over so you need to fill out this form each year.</p>
-                <div class="joinBtns">
-                    <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" class="btnLink" target="_blank" rel="noopener noreferrer">
-                        <div class="splashBtn findMore purpleBg">Join ToC</div>
-                    </a>
-                    <a href="/discord" class="btnLink" target="_blank" rel="noopener noreferrer">
-                        <div class="splashBtn findMore purpleBg">Chat on Discord</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="events section">
+        <div class="events section purpleBg">
             <h1>Events</h1>
-            <p>upcoming events and past events here!! maybe embed a google calender or instagram feed?</p>
-            <br>
-            <p>but yea stuff here about events :) ^ would be nice then u dont have to update website just auto update from insta or w/e</p>
-        </div>
-        <div class="resources section purpleBg">
-            <h1>Resources</h1>
-            <div class="resourcesArea">
-                {filteredPosts.slice(0, 3).map((post) => 
-                    <ResourceCard 
-                        href={post.url} 
-                        title={String(post.frontmatter.title) + " →"}
+            <div class="eventCardArea">
+                <!--{filteredPosts.slice(0, 3).map((post) => 
+                    <EventCard 
+                        title={String(post.frontmatter.title)}
                         subtitle={String(post.frontmatter.description)}
                         image={post.frontmatter.image}
                         style=""
-                        tags={post.frontmatter.tags}
                         target=""
                     />
-                )}
-                <ResourceCard 
-                    href="resources" 
-                    title="Find More Resources →"
-                    subtitle="Find our full list of resources here"
-                    image="https://images.squarespace-cdn.com/content/v1/5f8d6f1d6f5d9d6f06cf8f99/1620275756922-VKCB7CXJKPVYL9XFV08I/pexels-oriel-frankie-ashcroft-6054387.jpg"
+                )}-->
+                <EventCard
+                    title="Title"
+                    subtitle="Subtitle"
+                    datetime='Date and Time'
                     style="greyBg"
-                    tags={["More"]}
                     target=""
                 />
             </div>
         </div>
-        <!-- 
-        <div class="sponsors section">
-            <div class="leftSide">
-                <h1>Proudly supported by our sponsors</h1>
-            </div>
-            <div class="rightSide">
-                <img src="./sponsors/ikea.png" alt="" class="sponsorLogo">
-                <img src="./sponsors/jeff.png" alt="" class="sponsorLogo">
-                <img src="./sponsors/finland.png" alt="" class="sponsorLogo">
-                <img src="./sponsors/jerma.webp" alt="" class="sponsorLogo">
-                <img src="./sponsors/movieNight.webp" alt="" class="sponsorLogo">
-                <img src="./sponsors/pizza.png" alt="" class="sponsorLogo">
-            </div>
-        </div>
-        -->
     </main>
 </Layout>
+
 <script>
     (document.querySelector('.navbar') as HTMLElement).style.background = '#fff';
 </script>
+
 <style>
     /* Desktop: */
     @media only screen and (min-width: 800px) {
@@ -326,7 +236,7 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
     .splashText {
         color: white;
     }
-    .resourcesArea {
+    .eventCardArea {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(min(20.94rem, 100%), 1fr));
         grid-gap: 1.8rem;
@@ -357,5 +267,11 @@ const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === tr
         width: 100%;
         padding: 0;
         margin: 0;
+        color: rgb(116,76,213);
     }
+</style>
+
+</script>
+<style>
+
 </style>
