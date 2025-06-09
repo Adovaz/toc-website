@@ -20,7 +20,7 @@ import EventCard from '../components/EventCard.astro';
                 <EventCard
                     title="Title"
                     subtitle="Subtitle"
-                    datetime={new Date().toLocaleString()}               
+                    datetime={new Date().toLocaleString()}     
 					style="greyBg"
                     target=""
                 />
