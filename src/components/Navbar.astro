@@ -1,12 +1,10 @@
 ---
-
 ---
 <div class="navbar">
     <div class="navbarLeft">
         <a href="/" class="navbarLogo">
             <img src="/tocTempLogo.png" class="logo" alt="Trans on Campus">
         </a>
-
         <ul class="navbarList">
             <li><a href="/resources/">Resources</a></li>
             <!-- <li><a href="/events/">Events</a></li> -->
@@ -16,11 +14,119 @@
         </ul>
     </div>
 
-    <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" class="navbarButton" target="_blank" rel="noopener noreferrer">
-        Join
-    </a>
+    <div class="navbarRight">
+        <a href="https://forms.gle/YYRaW3nrKDTs3Gus6" class="navbarButton" target="_blank" rel="noopener noreferrer">
+            Join
+        </a>
+        <!-- Hamburger icon for mobile -->
+        <button class="navbarHamburger" type="button" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.navbarHamburger');
+    const menu = document.querySelector('.navbarList');
+    hamburger.addEventListener('click', function() {
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+  });
+</script>
 <style>
+    :root {
+        --navbar-height: 90px;
+    }
+    .navbarButton {
+        background-color: #734ad3;
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 5px;
+        float: right;
+    }
+    .navbarButton:hover {
+        background-color: #6840c4;
+        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgb(104, 64, 197) 100%);
+    }
+    .navbarLeft {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .navbarRight {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .navbar {
+        background: rgb(214, 108, 124);
+        background: 
+            linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%),
+            url(https://grainy-gradients.vercel.app/noise.svg);
+        height: var(--navbar-height);
+        flex-shrink: 0; /* Unsure why flex-shrink: 1 is being applied to the navbar. */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-family: "Metropolis", "Inter", system-ui, sans-serif;
+    }
+    .navbarList {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        float: right;
+    }
+    .navbarList li {
+        float: left;
+        display: inline;
+        text-align: center;
+        text-decoration: none;
+    }
+    .navbarList li a {
+        text-decoration: none;
+        color: rgb(18, 12, 31);
+    }
+    .navbarList li a:hover {
+        color: rgb(3, 0, 10);
+        text-decoration: underline;
+    }
+    .navbarHamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 10px;
+        z-index: 30;
+        transition: 0.3s;
+    }
+    .navbarHamburger span { /* Individual lines of the hamburger icon */
+        display: block;
+        width: 28px;
+        height: 4px;
+        margin: 4px 0;
+        background: #734ad3;
+        border-radius: 2px;
+    }
+    .navbarHamburger.open {
+        transform: rotate(90deg);
+    }
+
     /* Desktop: */
     @media only screen and (min-width: 800px) {
         .navbarLogo img {
@@ -49,6 +155,9 @@
     }
     /* Mobile */
     @media only screen and (max-width: 799px) {
+        :root {
+            --navbar-height: 60px;
+        }
         .navbarLogo img {
             /* width: 3em; */
             height: 3em;
@@ -68,63 +177,27 @@
             margin: 8px 2px;
             padding: 10px 15px;
         }
+        .navbarHamburger {
+            display: flex;
+        }
+        .navbarList {
+            display: none;
+            position: absolute;
+            top: var(--navbar-height);
+            left: 0;
+            width: 100vw;
+            background: linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%), url(https://grainy-gradients.vercel.app/noise.svg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            flex-direction: column;
+        }
+        .navbarList.open {
+            display: flex;
+        }
+        .navbarList li {
+            padding: 16px 24px;
+            float: none;
+            display: block;
+            text-align: left;
+        }
     }
-
-    .navbarButton {
-        background-color: #734ad3;
-        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgba(116,76,213,1) 100%);
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        cursor: pointer;
-        border-radius: 5px;
-        float: right;
-    }
-    .navbarButton:hover {
-        background-color: #6840c4;
-        background: linear-gradient(29deg, rgba(116,76,213,1) 0%, rgba(108,57,200,1) 26%, rgb(104, 64, 197) 100%);
-    }
-    .navbarLeft {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    .navbar {
-        background: rgb(214, 108, 124);
-        background: 
-            linear-gradient(18deg, rgba(249,222,226,1) 0%, rgba(231,164,193,1) 45%, rgba(86,203,251,1) 100%),
-            url(https://grainy-gradients.vercel.app/noise.svg);
-        height: 90px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
-        font-family: "Metropolis", "Inter", system-ui, sans-serif;
-    }
-    .nabarList {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        float: right;
-    }
-    .navbarList li {
-        float: left;
-        display: inline;
-        text-align: center;
-        text-decoration: none;
-    }
-    .navbarList li a {
-        text-decoration: none;
-        color: rgb(18, 12, 31);
-    }
-    .navbarList li a:hover {
-        color: rgb(3, 0, 10);
-        text-decoration: underline;
-    }
-
-
 </style>
