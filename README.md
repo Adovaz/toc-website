@@ -11,6 +11,7 @@ The website for Trans on Campus, a support network, social group, and advocacy g
 
 - [Contents](#contents)
 - [Contributing](#contributing)
+  - [Contributors](#contributors)
 - [Writing](#writing)
 - [Development](#development)
   - [Setup](#setup)
@@ -20,6 +21,12 @@ The website for Trans on Campus, a support network, social group, and advocacy g
 ## Contributing
 
 Please feel free to contribute to the upkeep and development of the website by making Pull Requests or raising Issues.
+
+### Contributors 
+
+<a href="https://github.com/Adovaz/toc-website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Adovaz/toc-website" />
+</a>
 
 ## Writing
 
@@ -58,4 +65,5 @@ $ npm run dev
 
 ## Contact
 
-If you have any questions or need help, please contact [toc@ramiels.me](mailto:toc@ramiels.me)
+If you have any questions, please contact [transoncampus.uoa@gmail.com](mailto:transoncampus.uoa@gmail.com)
+

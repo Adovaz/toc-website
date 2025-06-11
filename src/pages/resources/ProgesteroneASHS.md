@@ -2,8 +2,8 @@
 layout: ../../layouts/markdownLayout.astro
 title: 'Progesterone Info ASHS'
 pubDate: 18/3/2023
-description: 'ASHSs Guidance for progesterone prescribing for gender affirming care'
-image:  'https://raw.githubusercontent.com/wiki-Bird/toc-website/main/public/jermaIcon.webp'
+description: 'Auckland Sexual health Service guidance for progesterone prescribing for gender affirming care'
+image:  '/resourceImgs/ASHSLogo.jpg'
 tags: ["Hormone Info"]
 featured: false
 pdf: "/pdfs/ProgesteroneInfoASHS.pdf"
