@@ -6,12 +6,14 @@ dist/
 
 # dependencies
 node_modules/
+.direnv/
 
 # logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+wrangler-debug.log*
 
 # environment variables
 .env
@@ -19,3 +21,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Wrangler local state/logs
+.wrangler/
