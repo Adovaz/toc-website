@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/markdownLayout.astro
-title: "Primary Care Guidelines"
+title: "Aotearoa Guidelines 2025"
 pubDate: 25/05/2026
 description: 'Gender-Affirming Care Guidelines Aotearoa 2025'
 image:  '/resourceImgs/Ao-Guidelines.png'
