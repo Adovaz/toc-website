@@ -2,7 +2,7 @@
 import Layout from '../layouts/defaultLayout.astro';
 import ResourceCard from '../components/ResourceCard.astro';
 import EventCard from '../components/EventCard.astro';
-const allPosts = await Astro.glob('../pages/resources/*.md');
+const allPosts = Object.values(import.meta.glob('../pages/resources/*.md', { eager: true }));
 const filteredPosts = allPosts.filter((post) => post.frontmatter.featured === true);
 ---
 
